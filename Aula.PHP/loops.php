@@ -46,6 +46,5 @@ foreach ($cidades as $chave => $cidades) {
         break; // valido para toda repetição 
     }
     */
-
 }
 
