@@ -1,30 +1,46 @@
 <?php 
 
+
 // declaração da classe 
 class Cliente 
 { 
+    //Atributos -> visibilidade (public)
     public $nome; 
     public $sobrenome; 
     public $CPF; 
+    public $nomeCompleto;
+
+// comstrutor é um recurso para inicializar seus atributos de forma direta - 
+    function __construct($nome, $sobrenome, $CPF) //dois underlines -> INVOCAÇÕES
+    {
+        $this->nome = $nome; 
+        $this->sobrenome = $sobrenome; 
+        $this->CPF = $CPF; 
+        $this->nomeCompleto = "$nome $sobrenome";
+    }   
+
+    public function salvar()
+    {
+      
+      $sql =  "INSERT INTO clientes (nome, sobrenome, cpf)
+              VALUES ('$this->nome', '$this->sobrenome', '$this->CPF')"; 
+              //VALUES (?, ?, ?); 
+
+              echo $sql;       
+        // $con = new PDO(); 
+        // $stmt = $con->prepare();
+        //  $this->nome, $this->sobrenome
+    }
 }
-// visibilidade (public)
 
-// Instancia 
-$cliente1 = new Cliente();
-$cliente2 = new Cliente(); 
 
-// Atributos são variáveis da classe
-$cliente1->nome = 'Leonardo'; 
-$cliente1->sobrenome = 'Cardoso';
 
-$cliente2->nome = 'Carlos'; 
-$cliente2->sobrenome = 'Faria'; 
-//acesso ao atributo nome 
-// echo $cliente1->nome . ' ' . $cliente1->sobrenome; 
 
-echo "$cliente1->nome $cliente1->sobrenome"; 
 
-// echo '<pre>'; 
-//var_dump($cliente1,$cliente2); 
+
+
+
+
+
 
 ?>
