@@ -1,6 +1,10 @@
 <?php 
 
-class Cliente
+// pilares de POO (OOP):
+// (1) herança (2) polimorfismo (3) abstração (4) encapsulamento 
+
+// não deixa o PHP instancias essa classe - ela serve somente de base para outras (sozinha não funciona)
+abstract class Cliente
 {
     public $nome; 
     public $endereco; 
